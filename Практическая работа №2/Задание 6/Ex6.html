@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        td.right-align {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function getInfo() {
+        const table = document.createElement('table');
+        table.innerHTML = `<caption>Степени</caption>`;
+        let row = table.insertRow();
+
+        let cell1 = row.insertCell();
+        let cell2 = row.insertCell();
+
+        cell1.innerHTML = 'Степень';
+        cell2.innerHTML = 'Результат';
+
+        for (let i = 0; i < 6; i++) {
+            row = table.insertRow();
+
+            cell1 = row.insertCell();
+            cell2 = row.insertCell();
+
+            cell1.innerHTML = '2<sup>' + i + '</sup>';
+            cell2.innerHTML = 2 ** i;
+            cell2.classList.add('right-align');
+        }
+        document.body.appendChild(table);
+    }
+    getInfo();
+</script>
+</body>
+</html>
