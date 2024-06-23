@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма в таблице</title>
+    <style>
+        .form-container {
+            max-width: 600px;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        input[type="text"], input[type="password"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        textarea {
+            resize: vertical;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name');
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirm-password');
+            var email = document.getElementById('email');
+            var message = document.getElementById('message');
+
+            if (name.value.trim() === "") {
+                alert("Пожалуйста, введите ваше имя.");
+                return false;
+            }
+
+            if (password.value.length < 5) {
+                alert("Пароль должен содержать больше 4-х символов.");
+                return false;
+            }
+
+            if (password.value !== confirmPassword.value) {
+                alert("Пароли не совпадают.");
+                return false;
+            }
+
+            if (!email.value.includes("@")) {
+                alert("Пожалуйста, введите корректный электронный адрес.");
+                return false;
+            }
+
+            if (message.value.trim().length <= 10) {
+                alert("Сообщение должно содержать больше 10 символов.");
+                return false;
+            }
+
+            document.getElementById('contactForm').submit();
+        }
+    </script>
+</head>
+<body>
+<div class="form-container">
+    <form id="contactForm" action="/submit_form" method="post" onsubmit="validateForm(event)">
+        <table>
+            <tr>
+                <td><label for="name">Ваше имя:*</label></td>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Пароль:*</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirm-password">Подтверждение пароля:*</label></td>
+                <td><input type="password" id="confirm-password" name="confirm_password" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Электронный адрес:*</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="subject">Тема сообщения:</label></td>
+                <td><input type="text" id="subject" name="subject"></td>
+            </tr>
+            <tr>
+                <td><label for="message">Сообщение:</label></td>
+                <td><textarea id="message" name="message" rows="4" cols="50"></textarea></td>
+            </tr>
+        </table>
+        <table class="buttons-container">
+            <tr>
+                <td>
+                    <input type="submit" value="Отправить">
+                    <input type="reset" value="Очистить">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
