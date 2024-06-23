@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect with Delay</title>
+    <script>
+        function redirectToNewPage() {
+            setTimeout(function () {
+                window.location.href = "https://www.google.ru/?hl=ru";
+            }, 5000);
+        }
+
+    </script>
+</head>
+<body onload="redirectToNewPage()">
+<h1>Переадресация на другой адрес через 5 секунд...</h1>
+</body>
+</html>
