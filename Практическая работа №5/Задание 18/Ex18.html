@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Animation</title>
+    <style>
+        #anil {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        function moveTxt() {
+            var anil = document.getElementById('anil');
+            var top = parseInt(anil.style.top, 10)
+
+            if (top < 500) {
+                anil.style.top = (top + 1) + 'px';
+                setTimeout(moveTxt, 1);
+            }
+        }
+
+        window.onload = function() {
+            var anil = document.getElementById('anil');
+            anil.style.top = '10px';
+            moveTxt();
+        };
+    </script>
+</head>
+<body>
+<div id="anil">
+    Текст, шагом марш!
+</div>
+</body>
+</html>
