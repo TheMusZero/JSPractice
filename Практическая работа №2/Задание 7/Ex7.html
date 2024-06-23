@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>School Subjects</title>
+    <script>
+        function displaySubjects() {
+            let subjects = ["Математика", "Физика", "Химия", "Литература", "История",
+                "География", "Биология", "Информатика", "Философия", "Социология"];
+
+            let exactSciences = subjects.slice(0, 3).concat(subjects.slice(6, 8));
+            let humanities = subjects.slice(3, 6).concat(subjects.slice(8));
+
+            // Выводим массивы в окно браузера
+            document.write("Точные науки: " + exactSciences.join(", ") + "<br>");
+            document.write("Гуманитарные науки: " + humanities.join(", ") + "<br>");
+        }
+    </script>
+</head>
+<body>
+<script>
+    displaySubjects();
+</script>
+</body>
+</html>
