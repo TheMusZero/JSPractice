@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser Redirect</title>
+    <script>
+        function redirectBasedOnBrowser() {
+            // Получаем имя браузера
+            var browserName = navigator.userAgent;
+
+            // Проверяем, если это Microsoft Internet Explorer
+            if (browserName.indexOf("Edg") !== -1) {
+                // Перенаправляем на Ex1.html
+                window.location.href = "Ex1.html";
+            } else {
+                // Перенаправляем на Ex3.html
+                window.location.href = "Ex3.html";
+            }
+        }
+
+        // Вызываем функцию для перенаправления
+        redirectBasedOnBrowser();
+    </script>
+</head>
+<body>
+<!-- Содержимое страницы можно добавить здесь -->
+</body>
+</html>
