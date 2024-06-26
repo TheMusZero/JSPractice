@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картиная Галерея</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.slider');
+            const slideContainer = slider.querySelector('.slide-container');
+            const slides = slideContainer.querySelectorAll('img');
+
+            let slideIndex = 0;
+            const slideCount = slides.length;
+            const slideWidth = slides[0].clientWidth; // Ширина одного слайда
+
+            function nextSlide() {
+                slideIndex = (slideIndex + 1) % slideCount;
+                slideContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+            }
+
+            // Если у вас один слайд, отключите автоматическую смену
+            if (slideCount > 1) {
+                setInterval(nextSlide, 3000); // Автоматическая смена слайдов каждые 3 секунды
+            }
+
+            // Модальное окно
+            const modal = document.querySelector('.modal');
+            const modalImg = modal.querySelector('img');
+            const imageContainers = document.querySelectorAll('.image-container img');
+
+            imageContainers.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImg.src = img.src;
+                });
+            });
+
+            modal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <div class="logo">Картиная Галерея Курского края</div>
+    <nav>
+        <ul>
+            <li><a href="main.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div>
+        <section class="slider">
+            <div class="slide-container">
+                <img src="artworks/1.jpg" alt="Slide 1">
+                <img src="artworks/2.jpg" alt="Slide 2">
+                <img src="artworks/3.jpg" alt="Slide 3">
+            </div>
+        </section>
+    </div>
+
+    <section class="popular-artworks">
+        <h2>Популярные картины</h2>
+        <div class="image-grid">
+            <div class="image-container">
+                <img src="artworks/1.jpg" alt="Slide 1">
+            </div>
+            <div class="image-container">
+                <img src="artworks/2.jpg" alt="Slide 2">
+            </div>
+            <div class="image-container">
+                <img src="artworks/3.jpg" alt="Slide 3">
+            </div>
+            <div class="image-container">
+                <img src="artworks/4.jpg" alt="Slide 1">
+            </div>
+            <div class="image-container">
+                <img src="artworks/5.jpg" alt="Slide 2">
+            </div>
+            <div class="image-container">
+                <img src="artworks/6.jpg" alt="Slide 3">
+            </div>
+            <div class="image-container">
+                <img src="artworks/7.jpg" alt="Slide 1">
+            </div>
+            <div class="image-container">
+                <img src="artworks/8.jpg" alt="Slide 2">
+            </div>
+        </div>
+    </section>
+
+    <div class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="logo">Картиная Галерея</div>
+    <nav>
+        <ul>
+            <li><a class="gain-center" href="main.html">Главная</a></li>
+            <li><a class="gain-center" href="about.html">О нас</a></li>
+            <li><a class="gain-center" href="gallery.html">Галерея</a></li>
+            <li><a class="gain-center" href="contacts.html">Контакты</a></li>
+            <li><a class="gain-center" href="register.html">Регистрация</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="form-container">
+        <h2>Регистрация</h2>
+        <form id="contactForm" action="/submit_form" method="post" onsubmit="validateForm(event)">
+            <table class="registration-form">
+                <tr>
+                    <td><label for="name">Ваше имя:*</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Пароль:*</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="confirm-password">Подтверждение пароля:*</label></td>
+                    <td><input type="password" id="confirm-password" name="confirm_password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Электронный адрес:*</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+            </table>
+            <table class="buttons-container">
+                <tr>
+                    <td>
+                        <input type="submit" value="Отправить">
+                        <input type="reset" value="Очистить">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
