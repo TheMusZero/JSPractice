@@ -78,9 +78,9 @@ main {
 .slide-container {
     background-color: #f5f5f5;
 
-    display: flex; /* Отображаем изображения в ряд */
+    display: flex;
     align-items: center;
-    transition: transform 0.5s ease; /* Плавное изменение переключения слайдов */
+    transition: transform 0.5s ease;
 }
 
 .popular-artworks {
@@ -91,9 +91,9 @@ main {
 
 .slide-container img {
     background-color: #f5f5f5;
-    height: 50%; /* Автоматический расчет высоты для сохранения пропорций */
-    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции */
-    transition: filter 0.3s ease; /* Плавное изменение размытия */
+    height: 50%;
+    object-fit: cover;
+    transition: filter 0.3s ease-;
 }
 
 .image-grid {
@@ -189,25 +189,23 @@ modal-content {}
 /* Форма регистрации */
 .form-container {
     width: 100%;
-    max-width: 500px; /* Максимальная ширина формы */
+    max-width: 500px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
-    margin: 20px auto; /* Центрирование формы по горизонтали */
+    margin: 20px auto;
     display: flex;
-    flex-direction: column; /* Отображаем элементы в столбец */
-    align-items: center; /* Центрируем элементы по горизонтали */
+    flex-direction: column;
+    align-items: center;
 }
 
-.cota
-    /* Стилизация заголовков формы */
 .form-container h2 {
     text-align: center;
     margin-bottom: 20px;
     padding: 20px;
     font-size: 24px;
-    color: #333; /* Цвет заголовка */
+    color: #333;
 }
 
 .form-container label {
@@ -220,14 +218,13 @@ th, td {
     text-align: left;
 }
 
-/* Стилизация полей ввода */
 input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
     align-self: auto;
-    width: 200px; /* Учитываем внутренние отступы */
-    padding: 12px; /* Увеличиваем внутренние отступы для удобства */
+    width: 200px;
+    padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -235,8 +232,7 @@ textarea {
     transition: border-color 0.3s ease;
 }
 
-/* Стилизация кнопок */
-/* Стилизация кнопок */
+
 input[type="submit"],
 input[type="reset"] {
     padding: 12px 24px;
@@ -249,8 +245,8 @@ input[type="reset"] {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    align-self: center; /* Выравнивание по центру */
-    width: auto; /* Ширина по содержимому */
+    align-self: center;
+    width: auto;
 }
 
 input[type="submit"]:hover,
@@ -259,15 +255,14 @@ input[type="reset"]:hover {
 }
 
 table.buttons-container {
-    margin: 0 auto; /* Центрируем таблицу по горизонтали */
+    margin: 0 auto;
 }
 
 .buttons-container td {
-    text-align: center; /* Центрируем содержимое ячеек таблицы */
+    text-align: center;
 
 }
 
-/* Стилизация сообщений об ошибке */
 .error-message {
     color: #cc0000;
     font-size: 14px;
